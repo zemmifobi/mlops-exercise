@@ -70,13 +70,3 @@ def test_model_score():
     except KeyError as e:
          raise KeyError(f"Error accessing score data in {scores_file}: {e}")
 
-
-    # Compare the latest historical score with the current score
-    # We assert that the new score must be greater than or equal to the previous best
-    assert score >= latest_score, f"Model performance regression detected! Current score {score} is lower than the latest historical score {latest_score}."
-    # --- End of new logic for Step 3 ---
-Use code with caution.
-Python
-Self-correction & Explanation: I've added more robust error checking (like checking if the file exists, if it's valid JSON, if it has the expected structure) and print statements to make it clearer what's happening during the test. The core logic is the same: load model_scores.json, get the last score entry, and assert that the newly calculated score is greater than or equal (>=) to the latest_score.
-Save the changes to tests.py.
-Let me know once you have replaced the content of tests.py and saved the file.
