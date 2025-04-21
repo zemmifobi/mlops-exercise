@@ -17,12 +17,12 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-cov # Install test dependencies here
 
-    # Added step to create directory and generate data
-    - name: Create directories and generate data # <-- New clearer name
-  run: |
-    mkdir data   # Create the data directory
-    mkdir models # Create the models directory 
-    python util/generate.py # Run the script to generate data
+    # Step to create directories and generate data
+    - name: Create directories and generate data
+      run: |
+        mkdir data   # Create the data directory
+        mkdir models # Create the models directory
+        python util/generate.py # Run the script to generate data
 
     - name: Test with pytest
       run: |
